@@ -1,0 +1,21 @@
+in GHC 7.6
+
+Prelude Language.Haskell.TH> runQ $ fmap show [d| data T = D1 Int |]
+"[DataD [] T_6 [] [NormalC D1_7 [(NotStrict,ConT GHC.Types.Int)]] []]"
+
+Prelude Language.Haskell.TH> runQ $ fmap show [d| data T = D1 !Int |]
+"[DataD [] T_8 [] [NormalC D1_9 [(IsStrict,ConT GHC.Types.Int)]] []]"
+
+Prelude Language.Haskell.TH> runQ $ fmap show [d| data T = D1 {-# UNPACK #-} !Int |]
+"[DataD [] T_10 [] [NormalC D1_11 [(Unpacked,ConT GHC.Types.Int)]] []]"
+
+Prelude Language.Haskell.TH> runQ $ fmap show [d| data T = D1 {-# UNPACK #-} Int |]
+
+<interactive>:11:49: parse error on input `Int'
+
+Prelude Language.Haskell.TH> runQ $ fmap show [d| data T = D1 {-# NOUNPACK #-} !Int |]
+"[DataD [] T_14 [] [NormalC D1_15 [(IsStrict,ConT GHC.Types.Int)]] []]"
+
+Prelude Language.Haskell.TH> runQ $ fmap show [d| data T = D1 {-# NOUNPACK #-} Int |]
+
+<interactive>:14:51: parse error on input `Int'
