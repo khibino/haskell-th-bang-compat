@@ -3,11 +3,21 @@ module Language.Haskell.TH.Compat.Bang.Current (
   BangType, BangTypeQ,
   VarBangType, VarBangTypeQ,
 
-  bangType, varBangType,
+  bang, bangType, varBangType,
+
+  SourceUnpackedness (..), SourceUnpackednessQ,
+  SourceStrictness (..), SourceStrictnessQ,
+
+  noSourceUnpackedness, sourceNoUnpack, sourceUnpack,
+  noSourceStrictness, sourceLazy, sourceStrict,
   ) where
 
 import Language.Haskell.TH.Syntax
   (Bang, BangType, VarBangType,)
 import Language.Haskell.TH.Lib (BangQ)
 import Language.Haskell.TH
-  (BangTypeQ, bangType, VarBangTypeQ, varBangType,)
+  (bang, BangTypeQ, bangType, VarBangTypeQ, varBangType,
+   SourceUnpackedness (..), SourceUnpackednessQ,
+   SourceStrictness (..), SourceStrictnessQ,
+   noSourceUnpackedness, sourceNoUnpack, sourceUnpack,
+   noSourceStrictness, sourceLazy, sourceStrict, )

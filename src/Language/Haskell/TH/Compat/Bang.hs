@@ -17,8 +17,16 @@ module Language.Haskell.TH.Compat.Bang (
   BangType, BangTypeQ,
   VarBangType, VarBangTypeQ,
 
+  SourceUnpackedness (NoSourceUnpackedness, SourceNoUnpack, SourceUnpack),
+  SourceUnpackednessQ,
+  SourceStrictness (NoSourceStrictness, SourceLazy, SourceStrict),
+  SourceStrictnessQ,
+
   -- * Compat functions
-  bangType, varBangType,
+  bang, bangType, varBangType,
+
+  noSourceUnpackedness, sourceNoUnpack, sourceUnpack,
+  noSourceStrictness, sourceLazy, sourceStrict,
   ) where
 
 #if MIN_VERSION_template_haskell(2,11,0)
