@@ -2,4 +2,4 @@
 
 ## 0.0.1.0
 
-* first revision.
+* first revision. compat type constructors and functions.
