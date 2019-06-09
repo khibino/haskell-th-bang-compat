@@ -8,5 +8,6 @@ module Language.Haskell.TH.Compat.Bang.Current (
 
 import Language.Haskell.TH.Syntax
   (Bang, BangType, VarBangType,)
+import Language.Haskell.TH.Lib (BangQ)
 import Language.Haskell.TH
-  (BangQ, BangTypeQ, bangType, VarBangTypeQ, varBangType,)
+  (BangTypeQ, bangType, VarBangTypeQ, varBangType,)
